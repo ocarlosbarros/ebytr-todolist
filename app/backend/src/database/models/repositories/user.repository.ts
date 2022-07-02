@@ -1,6 +1,6 @@
 import IRepository from './IRepository';
 import User from '../entities/user';
-import IUser from 'src/database/models/interfaces/IUser';
+import IUser from '../interfaces/IUser';
 
 class UserRepository implements IRepository<IUser>  {
     private _model;
@@ -8,14 +8,15 @@ class UserRepository implements IRepository<IUser>  {
     constructor(){
         this._model = User;
     }
-    
-    
-    create(entity: IUser): Promise<IUser> {
-        throw new Error('Method not implemented.');
+        
+    async create(entity: any): Promise<IUser> {
+        const created = await this._model.create(entity);
+
+        return created;
     }
     
-    async findAll(): Promise<User[]> {
-        const allUsers = await this._model.findAll();
+    async findAll(): Promise<IUser[]> {
+        const allUsers = await this._model.findAll({ raw: true });
         return allUsers;
     }
 
