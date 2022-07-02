@@ -11,7 +11,7 @@
     "url": "git+https://github.com/ocarlosbarros/ebytr-todolist.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Carlos Barros",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ocarlosbarros/ebytr-todolist/issues"
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ocarlosbarros/ebytr-todolist#readme",
   "devDependencies": {
     "dotenv": "^16.0.1",
+    "eslint-plugin-import": "^2.26.0",
     "jest": "^28.1.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.2",
