@@ -1,5 +1,5 @@
 import { Model, STRING, INTEGER } from 'sequelize';
-import db from '.';
+import db from '..';
 import User from './user';
 
 class Task extends Model {
