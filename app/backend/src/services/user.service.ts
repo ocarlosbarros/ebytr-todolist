@@ -1,6 +1,7 @@
 import IUser from "src/database/models/interfaces/IUser";
 import IUserService from "./interfaces/IUserService";
 import IUserRepository from '../database/models/repositories/IRepository';
+import { encryptPassword } from "../helpers";
 
 class UserService implements IUserService  {
     private _userRepository;
@@ -10,7 +11,13 @@ class UserService implements IUserService  {
     }
     
     async create(entity: IUser): Promise<IUser> {
-        throw new Error("Method not implemented.");
+        const { password: passwordWithoutCrypt } = entity;
+
+        const password = await encryptPassword(passwordWithoutCrypt);
+
+        const created = await this._userRepository.create({ ...entity, password })
+
+        return created;
     }
     
     async findAll(): Promise<IUser[]> {
