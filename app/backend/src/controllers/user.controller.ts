@@ -1,21 +1,33 @@
 import { Request, Response, NextFunction } from 'express';
+import IUserService from 'src/services/interfaces/IUserService';
 import IController from './interfaces/IController';
-
 class UserController implements IController {
 
-  async create(_request: Request, response: Response, _next: NextFunction): Promise<Response | void> {
+  private _userService;
+
+  constructor(userService: IUserService) {
+    this._userService = userService;
+  }
+
+
+  create = async (_request: Request, response: Response, _next: NextFunction): Promise<Response | void> => {
     return response.status(201).json({ message: 'create' });
   }
 
-  async findAll(_request: Request, response: Response, _next: NextFunction): Promise<void | Response> {
+  findAll = async (_request: Request, response: Response, next: NextFunction): Promise<Response | void> => {
+    try {
+      const allUsers = await this._userService.findAll()
+      return response.status(200).json(allUsers);
+    } catch (error) {
+      next(error);      
+    }
+  }
+
+  update = async (_request: Request, response: Response, _next: NextFunction): Promise<Response | void> => {
     return response.status(200).json({ message: 'create' });
   }
 
-  async update(_request: Request, response: Response, _next: NextFunction): Promise<void | Response> {
-    return response.status(200).json({ message: 'create' });
-  }
-
-  async delete(_request: Request, response: Response, _next: NextFunction): Promise<void | Response> {
+  delete = async (_request: Request, response: Response, _next: NextFunction): Promise<Response | void> => {
     return response.status(204).json({ message: 'create' });
   }
 }
