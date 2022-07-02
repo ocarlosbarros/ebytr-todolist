@@ -10,5 +10,6 @@ const userService = new UserService(userRepository);
 const userController = new UserController(userService);
 
 userRouter.get('/', userController.findAll);
+userRouter.post('/', userController.create);
 
 export default userRouter;
