@@ -10,8 +10,15 @@ class UserController implements IController {
   }
 
 
-  create = async (_request: Request, response: Response, _next: NextFunction): Promise<Response | void> => {
-    return response.status(201).json({ message: 'create' });
+  create = async (request: Request, response: Response, next: NextFunction): Promise<Response | void> => {
+    try {
+      const { username, email, password, role } = request.body;
+      const created = await this._userService.create({ username, email, password, role });
+      return response.status(201).json(created);
+    } catch (error) {
+      next(error);
+    }
+    
   }
 
   findAll = async (_request: Request, response: Response, next: NextFunction): Promise<Response | void> => {
