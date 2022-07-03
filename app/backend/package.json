@@ -4,9 +4,9 @@
   "description": "",
   "main": "./dist/server",
   "scripts": {
-    "build": "tsc -w",
+    "build": "tsc",
     "start": "node .",
-    "dev":"nodemon --watch ./src/server.ts",
+    "dev": "nodemon --watch \"./src/**\" ./src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./src --ext .ts"
   },
