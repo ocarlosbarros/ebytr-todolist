@@ -1,5 +1,5 @@
 import { Model , STRING } from 'sequelize';
-import db from '.';
+import db from '..';
 
 class User extends Model {
   public username: string;
