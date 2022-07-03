@@ -1,12 +1,12 @@
 import IUser from "src/database/models/interfaces/IUser";
 import IUserService from "./interfaces/IUserService";
-import IUserRepository from '../database/models/repositories/IRepository';
+import IRepository from '../database/models/repositories/IRepository';
 import { encryptPassword } from "../helpers";
 
 class UserService implements IUserService  {
     private _userRepository;
 
-    constructor(userRepository: IUserRepository<IUser>){
+    constructor(userRepository: IRepository<IUser>){
         this._userRepository = userRepository;
     }
     
