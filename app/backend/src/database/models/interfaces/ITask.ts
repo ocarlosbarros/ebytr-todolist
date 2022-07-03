@@ -4,8 +4,8 @@ interface ITask {
     name:string;
     description:string;
     status: string;
-    createdAt: Date,
-    updatedAt: Date,
+    createdAt?: Date,
+    updatedAt?: Date,
 }
 
 export default ITask;
