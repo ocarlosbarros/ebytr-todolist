@@ -16,17 +16,15 @@ services:
         condition: service_healthy
     environment:
       - PORT=${PORT}
-      - DB_USER=${DATABASE_USER}
+      - DB_USER=root
       - DB_PASSWORD=${DATABASE_PASSWORD}
-      - DB_HOST=${DATABASE_HOST}
+      - DB_HOST=mysql_database
       - DB_NAME=${DATABASE_NAME}
       - DB_PORT=${DATABASE_PORT}
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3001"]
-      interval: 10s
       timeout: 30s
       retries: 5
-      start_period: 30s
   mysql_database:
     image: mysql:8.0.21
     container_name: mysql_database
