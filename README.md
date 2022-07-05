@@ -1,58 +1,79 @@
-# O Desafio Ebytr
+<h1 style="text-align: center">
+Ebytr ToDo List
+</h1>
 
 ## Contexto
 
-A empresa Ebytr está passando por problemas de produtividade/controle porque as pessoas colaboradoras vêm tendo dificuldade na organização de suas tarefas individuais. Por esse motivo, a diretora de produto Carolina Bigonha decidiu implantar uma nova forma de organizar as tarefas.
+<p style="text-align: justify">
+O <strong>Ebytr ToDo List</strong> é um projeto capaz de auxiliar as pessoas a se organizar e ter mais produtividade. É possível criar, remover, atualizar e também visualizar sua lista de tarefas, além de ordena-las em alfabética, data de criação ou por status. 
+</p>
 
-Você foi a pessoa contratada para desenvolver um sistema capaz de auxiliar as pessoas colaboradoras a se organizar e ter mais produtividade. Na Ebytr o time de desenvolvimento utiliza a Stack MySQL, Express, React e Node para criar suas aplicações. Foi combinado com a Ebytr que você utilizará essa mesma Stack para resolver o problema de organização e produtividade da empresa.
+# Pré-requisitos
 
-### Requisitos Técnicos
+Para executar esse projeto, será necessário instalar os seguintes programas:
 
-#### Frontend
-React
+* Nodejs v16.15.0 ou superior
+* Npm v8.5.5 ou superior
+* Docker v20.10.17 ou superior
+* Docker Compose v1.29.2 ou superior
 
-#### Backend
+# Instalação das dependências
+```js
+git clone git@github.com:ocarlosbarros/ebytr-todolist.git
 
-NodeJS
-MySQL
-Arquitetura em camadas;
+cd ebytr-todolist
 
-### Funcionalidades:
-Visualizar a lista de tarefas;
-Esta lista deve ser ordenável por ordem alfabética, data de criação ou por status;
-Inserir uma nova tarefa na lista;
-Remover uma tarefa da lista;
-Atualizar uma tarefa da lista;
-A tarefa deve possuir um status editável: pendente, em andamento ou pronto;
+npm install
 
-Abaixo estão (i) os requisitos técnicos, 
-(ii) as funcionalidades, 
-(iii) critérios de avaliação do desafio e 
+```
+# Instalação das dependências frontend
 
-(iv) algumas dicas importantes.
-Requisitos técnicos:
+Na raíz do projeto 
+```js
+cd app/frontend
+
+npm install
+
+```
+
+# Instalação das dependências backend
+Na raíz do projeto 
+```js
+
+cd app/backend
+
+npm install
+
+```
+
+# Executando o projeto
+
+Para voltar para o raíz do projeto:
+
+```js
+cd ..
+
+npm run compose:up
+```
+
+# Construído com
+
+#### **Frontend**
+
+* React
+* React Router DOM
+* Tailwind CSS
+
+#### **Backend**
+
+* Typescript
+* Nodejs
+* Express
+* Sequelize
+* MYSQL
+
+# Licença
 
 
-### Critérios de avaliação
+Este projeto está sob a licença MIT &copy; Carlos Barros com <span class="hurt">&#128156;</span> 
 
-Atendimento aos requisitos técnicos e funcionais;
-Seu projeto deve rodar sem erros;
-Entendimento dos conceitos das camadas adotadas;
-Código e componentes reutilizados;
-Habilidade em escrever testes (mínimo 30% de cobertura);
-Boa legibilidade do código;
-Separação do front e backend;
-Mensagens de commits bem descritas e commits com um escopo nítido;
-Referências de códigos de terceiros;
-Instruções nítidas no README do projeto para setup e execução da aplicação e dos testes.
-
-### Dicas importantes!
-Ter uma boa cobertura de testes Front e Back;
-Aplicar boas práticas de escrita de código;
-Documentação do projeto (README), que inclua:
-Passo a passo para instalar e executar o projeto. Incluindo instruções especiais para instalar dependências e/ou bancos de dados, se houver;
-Endereço da aplicação no Heroku, se houver (ou outro serviço de deployment);
-Ter um linter configurado;
-O projeto deverá ser entregue via repositório pessoal no GitHub (utilize boas práticas de criação/nomeação de branches, além de mensagens de commits bem descritas e commits com um escopo nítido).
-
-Boa sorte! :four_leaf_clover:
